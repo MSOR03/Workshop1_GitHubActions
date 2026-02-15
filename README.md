@@ -1,4 +1,5 @@
 # Mi Proyecto - CI/CD Pipeline Workshop
+![CI Pipeline](https://github.com/msor03/Workshop1_GitHubActions/actions/workflows/ci.yml/badge.svg)
 
 Este proyecto es parte del taller práctico de Ingeniería de Software II sobre construcción de pipelines CI/CD.
 
