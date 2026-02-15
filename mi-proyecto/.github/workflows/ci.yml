@@ -3,8 +3,9 @@ push:
 branches: [ main ]
 pull_request:
 branches: [ main ]
+
 jobs:
-build:
+test:
 runs-on: ubuntu-latest
 steps:
 - uses: actions/checkout@v4
@@ -14,5 +15,9 @@ with:
 node-version: '18'
 - name: Install dependencies
 run: npm ci
-- name: Build check
-run: echo 'Build successful!'
+- name: Run tests
+run: npm test
+- name: Upload coverage
+uses: codecov/codecov-action@v3
+if: always()
+
