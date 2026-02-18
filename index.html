@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI/CD Pipeline Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { color: #2c3e50; }
+    .status { color: #27ae60; font-weight: bold; }
+    .info { background: #ecf0f1; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    .endpoints { background: #e8f4f8; padding: 15px; border-radius: 4px; }
+    code { background: #34495e; color: #ecf0f1; padding: 2px 6px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Deploy Status</h1>
+    <p class="status">✅ Deployment Successful</p>
+    
+    <div class="info">
+      <h3>📊 Deployment Information</h3>
+      <p><strong>Last Deploy:</strong> $(date)</p>
+      <p><strong>Commit SHA:</strong> <code>${GITHUB_SHA:0:7}</code></p>
+      <p><strong>Branch:</strong> <code>main</code></p>
+    </div>
+    
+    <div class="endpoints">
+      <h3>🔗 API Endpoints (Express App)</h3>
+      <p><em>Note: To run the API locally, use: <code>npm start</code></em></p>
+      <ul>
+        <li><code>GET /</code> - Mensaje de bienvenida</li>
+        <li><code>GET /health</code> - Estado de salud del servicio</li>
+        <li><code>GET /version</code> - Versión de la aplicación</li>
+      </ul>
+    </div>
+    
+    <div class="info">
+      <h3>✅ Pipeline CI/CD</h3>
+      <ul>
+        <li>✅ Integración continua con pruebas automatizadas</li>
+        <li>✅ Análisis de cobertura de código</li>
+        <li>✅ Despliegue automático a GitHub Pages</li>
+      </ul>
+    </div>
+    
+    <p style="margin-top: 30px; color: #7f8c8d;">
+      <strong>Repository:</strong> 
+      <a href="https://msor03.github.io/Workshop1_GitHubActions">
+        ${GITHUB_REPOSITORY}
+      </a>
+    </p>
+  </div>
+</body>
+</html>
